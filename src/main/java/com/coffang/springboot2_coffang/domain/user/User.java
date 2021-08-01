@@ -19,6 +19,8 @@ public class User {
     @JoinColumn(name="cart_id")
     private Cart cart;
 
+    private String email;
+
     @OneToOne
     @JoinColumn(name="order_id")
     private Order order;
