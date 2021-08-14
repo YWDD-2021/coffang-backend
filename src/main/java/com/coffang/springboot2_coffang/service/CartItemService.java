@@ -2,7 +2,9 @@ package com.coffang.springboot2_coffang.service;
 
 import com.coffang.springboot2_coffang.domain.cartitem.CartItem;
 import com.coffang.springboot2_coffang.domain.cartitem.CartItemRepository;
-import com.coffang.springboot2_coffang.dto.CartItemDto;
+import com.coffang.springboot2_coffang.dto.CartItemResponseDto;
+import com.coffang.springboot2_coffang.dto.CartItemSaveRequestDto;
+import com.coffang.springboot2_coffang.dto.CartItemUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,25 +15,25 @@ public class CartItemService {
     private final CartItemRepository cartItemRepository;
 
     @Transactional
-    public Long save(CartItemDto cartItemDto) {
-        return cartItemRepository.save(cartItemDto.toEntity()).getId();
+    public Long save(CartItemSaveRequestDto requestDto) {
+        return cartItemRepository.save(requestDto.toEntity()).getId();
     }
 
     @Transactional
-    public Long update(Long id, CartItemDto cartItemDto) {
+    public Long update(Long id, CartItemUpdateRequestDto requestDto) {
         CartItem cartItem = cartItemRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 Cart가 없습니다. id="+ id));
 
-        cartItem.update(cartItemDto.getCartPrice(), cartItemDto.getCount());
+        cartItem.update(requestDto.getCartPrice(), requestDto.getCount());
 
         return id;
     }
 
-    public CartItemDto findById(Long id) {
+    public CartItemResponseDto findById(Long id) {
         CartItem entity = cartItemRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("해당 Cart가 없습니다. id=" + id));
 
-        return new CartItemDto(entity);
+        return new CartItemResponseDto(entity);
     }
 
     @Transactional

@@ -9,23 +9,16 @@ import lombok.Getter;
 import javax.persistence.GenerationType;
 
 @Getter
-public class CartItemDto {
+public class CartItemResponseDto {
     private Long id;
-
     private Item item;
-
     private Long cartPrice;
-
     private Long count;
 
-    public CartItemDto(CartItem entity) {
+    public CartItemResponseDto(CartItem entity) {
         this.id = entity.getId();
         this.item = entity.getItem();
         this.cartPrice = entity.getCartPrice();
         this.count = entity.getCount();
-    }
-
-    public CartItem toEntity() {
-        return CartItem.builder().build();
     }
 }
