@@ -4,7 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@MappedSuperclass
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Data
 public abstract class Item {
     @Id
