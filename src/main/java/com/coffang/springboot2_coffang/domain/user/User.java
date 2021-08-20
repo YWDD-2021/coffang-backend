@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -21,7 +22,7 @@ public class User {
 
     private String email;
 
-    @OneToOne
+    @OneToMany
     @JoinColumn(name="order_id")
-    private Order order;
+    private List<Order> orders;
 }
