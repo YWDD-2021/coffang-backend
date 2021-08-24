@@ -7,6 +7,8 @@ import javax.persistence.*;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Data
+@DiscriminatorColumn
+@Getter
 public abstract class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,4 +28,11 @@ public abstract class Item {
 
     private String imageUrl;
 
+    public Item(String name,Long price,Integer stockQuantity,String category,String imageUrl){
+        this.name=name;
+        this.price=price;
+        this.stockQuantity=stockQuantity;
+        this.category=category;
+        this.imageUrl=imageUrl;
+    }
 }

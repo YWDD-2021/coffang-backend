@@ -1,5 +1,5 @@
 package com.coffang.springboot2_coffang.controller;
-
+/*
 import com.coffang.springboot2_coffang.domain.cart.Cart;
 import com.coffang.springboot2_coffang.domain.user.User;
 import com.coffang.springboot2_coffang.dto.CartResponseDto;
@@ -17,8 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.mockito.BDDMockito.given;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-
-@WebMvcTest(CartController.class)
+*/
+/*@WebMvcTest(CartController.class)
 public class CartControllerTest {
     @Autowired
     MockMvc mvc;
@@ -46,4 +46,4 @@ public class CartControllerTest {
         CartResponseDto responseDto = cartService.findByUserId(userId);
         assertThat(responseDto.getId()).isEqualTo(userId);
     }
-}
+}*/
