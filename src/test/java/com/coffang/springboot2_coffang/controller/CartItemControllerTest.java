@@ -1,10 +1,7 @@
 package com.coffang.springboot2_coffang.controller;
 
-<<<<<<< HEAD
-
 import com.coffang.springboot2_coffang.domain.cart.Cart;
-=======
->>>>>>> 7128ca7fb091a22710d277297e04a51413a658a5
+
 import com.coffang.springboot2_coffang.domain.cartitem.CartItem;
 import com.coffang.springboot2_coffang.domain.item.Coffee;
 import com.coffang.springboot2_coffang.dto.CartItemResponseDto;
