@@ -1,16 +1,12 @@
 package com.coffang.springboot2_coffang.domain.item;
 
 
-import lombok.Builder;
+import lombok.*;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-                                            
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
@@ -18,6 +14,7 @@ import javax.persistence.Entity;
 
 @Entity
 @Getter
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @DiscriminatorValue("Coffee")
 @Data
