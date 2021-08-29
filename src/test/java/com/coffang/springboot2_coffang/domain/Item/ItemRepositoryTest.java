@@ -1,26 +1,29 @@
 package com.coffang.springboot2_coffang.domain.Item;
 
-
 import com.coffang.springboot2_coffang.domain.item.Brewing;
 import com.coffang.springboot2_coffang.domain.item.Coffee;
+import com.coffang.springboot2_coffang.domain.item.Item;
 import com.coffang.springboot2_coffang.domain.item.ItemRepository;
 
-
-import org.junit.jupiter.api.AfterAll;
+import org.graalvm.compiler.asm.sparc.SPARCAssembler;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class ItemRepositoryTest {
     @Autowired
     ItemRepository itemRepository;
 
-    @AfterAll
+    @AfterEach
     public void cleanup(){
         itemRepository.deleteAll();
     }
@@ -47,8 +50,10 @@ public class ItemRepositoryTest {
                 .region("East Africa")
                 .build());
 
-        Brewing brewing = (Brewing)itemRepository.findAll().get(0);
-        Coffee coffee = (Coffee)itemRepository.findAll().get(1);
+        List<Item> brs = itemRepository.findAll();
+        List<Item> coffees = itemRepository.findAll();
+        Brewing brewing = (Brewing) brs.get(0);
+        Coffee coffee = (Coffee) coffees.get(1);
 
         assertThat(brewing.getName()).isEqualTo("Hario Cold Brew Bottle");
         assertThat(coffee.getName()).isEqualTo("Neighbor Blend");
