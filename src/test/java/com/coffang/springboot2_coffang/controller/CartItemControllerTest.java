@@ -1,5 +1,7 @@
 package com.coffang.springboot2_coffang.controller;
 
+import com.coffang.springboot2_coffang.domain.cart.Cart;
+
 import com.coffang.springboot2_coffang.domain.cartitem.CartItem;
 import com.coffang.springboot2_coffang.domain.item.Coffee;
 import com.coffang.springboot2_coffang.dto.CartItemResponseDto;

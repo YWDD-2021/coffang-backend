@@ -11,6 +11,8 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 @NoArgsConstructor
 @Data
+@DiscriminatorColumn
+@Getter
 @JsonDeserialize(using = ItemDeserializer.class)
 public abstract class Item {
 
@@ -47,4 +49,11 @@ public abstract class Item {
 
     private String imageUrl;
 
+    public Item(String name,Long price,Integer stockQuantity,String category,String imageUrl){
+        this.name=name;
+        this.price=price;
+        this.stockQuantity=stockQuantity;
+        this.category=category;
+        this.imageUrl=imageUrl;
+    }
 }
