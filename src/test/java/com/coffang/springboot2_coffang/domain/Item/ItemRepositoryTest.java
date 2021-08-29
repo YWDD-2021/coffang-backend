@@ -6,9 +6,8 @@ import com.coffang.springboot2_coffang.domain.item.Coffee;
 import com.coffang.springboot2_coffang.domain.item.ItemRepository;
 
 
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -16,13 +15,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 public class ItemRepositoryTest {
     @Autowired
     ItemRepository itemRepository;
 
-    @After
+    @AfterAll
     public void cleanup(){
         itemRepository.deleteAll();
     }
