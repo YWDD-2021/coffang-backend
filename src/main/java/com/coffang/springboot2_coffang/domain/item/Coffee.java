@@ -1,17 +1,25 @@
 package com.coffang.springboot2_coffang.domain.item;
 
+
+import lombok.Builder;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+                                            
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@Getter
 @EqualsAndHashCode(callSuper = true)
+@DiscriminatorValue("Coffee")
 @Data
 @JsonDeserialize(using= JsonDeserializer.None.class)
 public class Coffee extends Item {
@@ -37,5 +45,12 @@ public class Coffee extends Item {
 
     @Column(nullable= false)
     String region;
+
+    @Builder
+    public Coffee(String name,Long price,Integer stockQuantity,String category,String imageUrl,String type,String region){
+        super(name,price,stockQuantity,category,imageUrl);
+        this.type=type;
+        this.region=region;
+    }
 
 }

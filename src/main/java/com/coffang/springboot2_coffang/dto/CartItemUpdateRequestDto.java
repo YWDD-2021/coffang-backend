@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class CartItemUpdateRequestDto {
-
     private Long cartPrice;
-
     private Long count;
 
     @Builder
