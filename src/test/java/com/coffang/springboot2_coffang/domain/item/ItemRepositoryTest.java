@@ -1,11 +1,5 @@
-package com.coffang.springboot2_coffang.domain.Item;
+package com.coffang.springboot2_coffang.domain.item;
 
-import com.coffang.springboot2_coffang.domain.item.Brewing;
-import com.coffang.springboot2_coffang.domain.item.Coffee;
-import com.coffang.springboot2_coffang.domain.item.Item;
-import com.coffang.springboot2_coffang.domain.item.ItemRepository;
-
-import org.graalvm.compiler.asm.sparc.SPARCAssembler;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

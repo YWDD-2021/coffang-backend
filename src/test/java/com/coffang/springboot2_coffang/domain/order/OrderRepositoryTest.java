@@ -37,14 +37,14 @@ public class OrderRepositoryTest {
         orderItems.add(orderItem);
 
         LocalDateTime orderDateTime = LocalDateTime.now();
-        OrderStatus orderStatus = OrderStatus.COMPLETE;
+        Boolean isCompleted = true;
 
         orderRepository.save(
                 Order.builder()
                     .user(user)
                     .orderItems(orderItems)
                     .orderDateTime(orderDateTime)
-                    .orderStatus(orderStatus)
+                    .isCompleted(isCompleted)
                     .build()
         );
 
@@ -54,6 +54,6 @@ public class OrderRepositoryTest {
         // then
         Order order = orderList.get(0);
         assertThat(order.getUser().getId()).isEqualTo(user.getId());
-        assertThat(order.getOrderStatus()).isEqualTo(orderStatus);
+        assertThat(order.getIsCompleted()).isEqualTo(isCompleted);
     }
 }

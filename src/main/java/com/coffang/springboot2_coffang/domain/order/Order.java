@@ -7,11 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-
-enum OrderStatus { COMPLETE, CANCELED }
 
 @Getter
 @NoArgsConstructor
@@ -31,13 +28,13 @@ public class Order {
 
     private LocalDateTime orderDateTime;
 
-    private OrderStatus orderStatus;
+    private Boolean isCompleted;
 
     @Builder
-    public Order(User user, List<OrderItem> orderItems, LocalDateTime orderDateTime, OrderStatus orderStatus) {
+    public Order(User user, List<OrderItem> orderItems, LocalDateTime orderDateTime, boolean isCompleted) {
         this.user = user;
         this.orderItems = orderItems;
         this.orderDateTime = orderDateTime;
-        this.orderStatus = orderStatus;
+        this.isCompleted = isCompleted;
     }
 }
