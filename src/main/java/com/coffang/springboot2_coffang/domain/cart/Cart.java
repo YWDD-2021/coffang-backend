@@ -2,6 +2,7 @@ package com.coffang.springboot2_coffang.domain.cart;
 
 import com.coffang.springboot2_coffang.domain.cartitem.CartItem;
 import com.coffang.springboot2_coffang.domain.user.User;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,4 +25,5 @@ public class Cart {
     @OneToMany
     @JoinColumn(name="cartitem_id")
     private List<CartItem> cartItems;
+
 }
