@@ -2,15 +2,15 @@ package com.coffang.springboot2_coffang.domain.cart;
 
 import com.coffang.springboot2_coffang.domain.cartitem.CartItem;
 import com.coffang.springboot2_coffang.domain.user.User;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import net.minidev.json.annotate.JsonIgnore;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @Entity
 public class Cart {
@@ -18,10 +18,21 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(mappedBy = "cart")
+    @OneToOne(mappedBy = "cart", cascade = CascadeType.ALL)
     private User user;
 
-    @OneToMany
+    @Fetch(FetchMode.JOIN)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name="cartitem_id")
     private List<CartItem> cartItems;
+
+    @Builder
+    public Cart(User user, List<CartItem> cartItems) {
+        this.user = user;
+        this.cartItems = cartItems;
+    }
+
+    public void update(List<CartItem> cartItems) {
+        this.cartItems = cartItems;
+    }
 }
