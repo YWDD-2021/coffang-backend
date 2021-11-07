@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,14 +35,12 @@ public class OrderRepositoryTest {
         List<OrderItem> orderItems = new ArrayList<OrderItem>();
         orderItems.add(orderItem);
 
-        LocalDateTime orderDateTime = LocalDateTime.now();
         Boolean isCompleted = true;
 
         orderRepository.save(
                 Order.builder()
                     .user(user)
                     .orderItems(orderItems)
-                    .orderDateTime(orderDateTime)
                     .isCompleted(isCompleted)
                     .build()
         );

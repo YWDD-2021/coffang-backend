@@ -4,6 +4,7 @@ import com.coffang.springboot2_coffang.domain.cart.Cart;
 import com.coffang.springboot2_coffang.domain.order.Order;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
@@ -25,4 +26,8 @@ public class User {
     @OneToMany
     @JoinColumn(name="order_id")
     private List<Order> orders;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 }
