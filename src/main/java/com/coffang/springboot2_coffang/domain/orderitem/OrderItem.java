@@ -15,7 +15,7 @@ public class OrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="item_id")
     private Item item;
 
@@ -26,6 +26,11 @@ public class OrderItem {
     @Builder
     public OrderItem(Item item, Long orderPrice, Long count) {
         this.item = item;
+        this.orderPrice = orderPrice;
+        this.count = count;
+    }
+
+    public void update(Long orderPrice, Long count) {
         this.orderPrice = orderPrice;
         this.count = count;
     }
