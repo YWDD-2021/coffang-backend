@@ -1,4 +1,4 @@
-package com.coffang.springboot2_coffang.domain.item.service;
+package com.coffang.springboot2_coffang.service;
 
 import com.coffang.springboot2_coffang.domain.cartitem.CartItem;
 import com.coffang.springboot2_coffang.domain.cartitem.CartItemRepository;
