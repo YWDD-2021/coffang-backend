@@ -7,12 +7,10 @@ import lombok.*;
 import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
-=======
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
->>>>>>> 1720950 (OAuth 작업중, User entity에 Email 추가)
 
 import javax.persistence.*;
 import java.util.List;
