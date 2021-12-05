@@ -1,15 +1,7 @@
-package com.coffang.springboot2_coffang.controller;
-
-import com.coffang.springboot2_coffang.dto.CartItemResponseDto;
-import com.coffang.springboot2_coffang.dto.CartItemSaveRequestDto;
-import com.coffang.springboot2_coffang.dto.CartItemUpdateRequestDto;
-import com.coffang.springboot2_coffang.service.CartItemService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-public class CartItemController {
+public class CartItemController{
     private final CartItemService cartItemService;
 
     @PostMapping("/api/v1/cartItems")
