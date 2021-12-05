@@ -2,7 +2,6 @@ package com.coffang.springboot2_coffang.domain.cart;
 
 import com.coffang.springboot2_coffang.domain.cartitem.CartItem;
 import com.coffang.springboot2_coffang.domain.user.User;
-<<<<<<< HEAD
 import lombok.*;
 import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.Fetch;
