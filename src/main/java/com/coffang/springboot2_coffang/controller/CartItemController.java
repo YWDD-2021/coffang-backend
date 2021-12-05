@@ -1,3 +1,5 @@
+package com.coffang.springboot2_coffang.controller;
+
 import com.coffang.springboot2_coffang.dto.CartItemResponseDto;
 import com.coffang.springboot2_coffang.dto.CartItemSaveRequestDto;
 import com.coffang.springboot2_coffang.dto.CartItemUpdateRequestDto;
