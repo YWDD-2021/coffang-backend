@@ -21,6 +21,7 @@ public class IndexControllerTest {
     private TestRestTemplate restTemplate;
 
     @Test
+    @WithMockUser(roles="USER")
     public void 메인페이지_로딩() {
         // when
         String body = this.restTemplate.getForObject("/", String.class);

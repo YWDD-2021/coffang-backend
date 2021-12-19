@@ -1,7 +1,7 @@
 package com.coffang.springboot2_coffang.controller;
 
 import com.coffang.springboot2_coffang.dto.OrderResponseDto;
-import com.coffang.springboot2_coffang.service.OrderService;
+import com.coffang.springboot2_coffang.domain.item.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

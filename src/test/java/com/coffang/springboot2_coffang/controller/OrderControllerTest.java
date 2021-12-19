@@ -3,7 +3,7 @@ package com.coffang.springboot2_coffang.controller;
 import com.coffang.springboot2_coffang.domain.orderitem.OrderItem;
 import com.coffang.springboot2_coffang.domain.user.User;
 import com.coffang.springboot2_coffang.dto.OrderResponseDto;
-import com.coffang.springboot2_coffang.service.OrderService;
+import com.coffang.springboot2_coffang.domain.item.service.OrderService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,7 +27,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(OrderController.class)
-@WithMockUser
 public class OrderControllerTest {
 
     @Autowired
@@ -38,6 +37,7 @@ public class OrderControllerTest {
 
     @Test
     @DisplayName("유저 주문 조회 테스트")
+    @WithMockUser(roles="USER")
     void findByUserIdTest() throws Exception {
         // given
         Long userId = Long.valueOf(1);
