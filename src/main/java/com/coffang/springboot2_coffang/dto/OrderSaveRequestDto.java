@@ -1,8 +1,5 @@
 package com.coffang.springboot2_coffang.dto;
 
-import com.coffang.springboot2_coffang.domain.order.Order;
-import com.coffang.springboot2_coffang.domain.orderitem.OrderItem;
-import com.coffang.springboot2_coffang.domain.user.User;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,24 +9,16 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 public class OrderSaveRequestDto {
-    private User user;
+    private Long userId;
 
-    private List<OrderItem> orderItems;
+    private List<OrderItemSaveRequestDto> orderItemSaveRequestDtos;
 
     private Boolean isCompleted;
 
     @Builder
-    public OrderSaveRequestDto(User user, List<OrderItem> orderItems, Boolean isCompleted) {
-        this.user = user;
-        this.orderItems = orderItems;
+    public OrderSaveRequestDto(Long userId, List<OrderItemSaveRequestDto> orderItemSaveRequestDtos, Boolean isCompleted) {
+        this.userId = userId;
+        this.orderItemSaveRequestDtos = orderItemSaveRequestDtos;
         this.isCompleted = isCompleted;
-    }
-
-    public Order toEntity() {
-        return Order.builder()
-                .user(user)
-                .orderItems(orderItems)
-                .isCompleted(isCompleted)
-                .build();
     }
 }
