@@ -2,7 +2,7 @@ package com.coffang.springboot2_coffang.controller;
 import com.coffang.springboot2_coffang.domain.cart.Cart;
 import com.coffang.springboot2_coffang.domain.user.User;
 import com.coffang.springboot2_coffang.dto.CartResponseDto;
-import com.coffang.springboot2_coffang.service.CartService;
+import com.coffang.springboot2_coffang.domain.item.service.CartService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

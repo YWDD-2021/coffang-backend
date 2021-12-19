@@ -1,4 +1,4 @@
-package com.coffang.springboot2_coffang.service;
+package com.coffang.springboot2_coffang.domain.item.service;
 
 import com.coffang.springboot2_coffang.domain.order.Order;
 import com.coffang.springboot2_coffang.domain.order.OrderRepository;

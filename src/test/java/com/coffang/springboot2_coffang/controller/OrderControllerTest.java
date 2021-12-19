@@ -3,7 +3,7 @@ package com.coffang.springboot2_coffang.controller;
 import com.coffang.springboot2_coffang.domain.orderitem.OrderItem;
 import com.coffang.springboot2_coffang.domain.user.User;
 import com.coffang.springboot2_coffang.dto.OrderResponseDto;
-import com.coffang.springboot2_coffang.service.OrderService;
+import com.coffang.springboot2_coffang.domain.item.service.OrderService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
