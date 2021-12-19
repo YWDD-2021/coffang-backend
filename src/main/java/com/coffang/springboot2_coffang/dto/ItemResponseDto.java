@@ -2,7 +2,11 @@ package com.coffang.springboot2_coffang.dto;
 
 import com.coffang.springboot2_coffang.domain.item.Item;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class ItemResponseDto {
         private Long id;
         private String name;

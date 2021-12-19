@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.*;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
@@ -47,6 +48,7 @@ public class CartItemControllerTest {
 
     @Test
     @DisplayName("CartItem 생성 테스트")
+    @WithMockUser(roles="USER")
     void CartItem_생성된다() throws Exception {
 
         // given

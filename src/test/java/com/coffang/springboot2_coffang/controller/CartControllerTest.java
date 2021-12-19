@@ -23,7 +23,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(CartController.class)
-@WithMockUser
 public class CartControllerTest {
     @Autowired
     MockMvc mvc;
@@ -33,6 +32,7 @@ public class CartControllerTest {
 
     @Test
     @DisplayName("유저 장바구니 조회 테스트")
+    @WithMockUser(roles="USER")
     void findByUserIdTest() throws Exception {
         Cart cart = new Cart();
         User user = new User();
