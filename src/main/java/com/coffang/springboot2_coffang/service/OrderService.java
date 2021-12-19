@@ -3,7 +3,6 @@ package com.coffang.springboot2_coffang.service;
 import com.coffang.springboot2_coffang.domain.order.Order;
 import com.coffang.springboot2_coffang.domain.order.OrderRepository;
 import com.coffang.springboot2_coffang.dto.OrderResponseDto;
-import com.coffang.springboot2_coffang.dto.OrderSaveRequestDto;
 import com.coffang.springboot2_coffang.dto.OrderUpdateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -21,14 +20,14 @@ public class OrderService {
     public List<OrderResponseDto> findByUserId(Long userId) {
         List<Order> entities = orderRepository.findByUserId(userId);
         if (entities.isEmpty()) {
-            throw new IllegalArgumentException("해당 Order가 없습니다. userId=" + userId);
+            throw new IllegalArgumentException("User에 해당하는 Order가 없습니다. userId=" + userId);
         }
         return entities.stream().map(OrderResponseDto::new).collect(Collectors.toList());
     }
 
     @Transactional
-    public Long save(OrderSaveRequestDto requestDto) {
-        return orderRepository.save(requestDto.toEntity()).getId();
+    public Long save(Order order) {
+        return orderRepository.save(order).getId();
     }
 
     @Transactional

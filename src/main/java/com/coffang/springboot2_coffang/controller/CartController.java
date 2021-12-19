@@ -16,5 +16,4 @@ public class CartController {
     public CartResponseDto findByUserId(@PathVariable Long userId) {
         return cartService.findByUserId(userId);
     }
-
 }

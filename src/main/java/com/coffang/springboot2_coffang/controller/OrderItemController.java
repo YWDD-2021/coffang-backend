@@ -14,6 +14,6 @@ public class OrderItemController {
 
     @GetMapping("/api/v1/orderItems/{orderItemId}")
     public OrderItemResponseDto findByOrderItemId(@PathVariable Long orderItemId) {
-        return orderItemService.findByOrderItemId(orderItemId);
+        return new OrderItemResponseDto(orderItemService.findByOrderItemId(orderItemId));
     }
 }

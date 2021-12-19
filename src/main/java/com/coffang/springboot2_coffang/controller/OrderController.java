@@ -4,6 +4,8 @@ import com.coffang.springboot2_coffang.dto.OrderResponseDto;
 
 import com.coffang.springboot2_coffang.dto.OrderSaveRequestDto;
 import com.coffang.springboot2_coffang.dto.OrderUpdateRequestDto;
+import com.coffang.springboot2_coffang.service.OrderAndOrderItemService;
+
 import com.coffang.springboot2_coffang.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +15,12 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class OrderController {
+    private final OrderAndOrderItemService orderAndOrderItemService;
     private final OrderService orderService;
 
     @PostMapping("/api/v1/orders")
-    public Long save(@RequestBody OrderSaveRequestDto requestDto) {
-        return orderService.save(requestDto);
+    public Long save(@RequestBody OrderSaveRequestDto orderSaveRequestDto) {
+        return orderAndOrderItemService.save(orderSaveRequestDto);
     }
 
     @PutMapping("/api/v1/orders/{id}")
