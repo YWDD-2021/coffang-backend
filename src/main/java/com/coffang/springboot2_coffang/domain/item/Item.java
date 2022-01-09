@@ -1,5 +1,6 @@
 package com.coffang.springboot2_coffang.domain.item;
 
+import com.coffang.springboot2_coffang.dto.ItemResponseDto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -56,4 +57,6 @@ public abstract class Item {
         this.category=category;
         this.imageUrl=imageUrl;
     }
+
+    public abstract ItemResponseDto toResponseDto();
 }
