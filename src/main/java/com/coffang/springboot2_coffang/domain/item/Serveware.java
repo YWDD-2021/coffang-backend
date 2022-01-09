@@ -1,5 +1,6 @@
 package com.coffang.springboot2_coffang.domain.item;
 
+import com.coffang.springboot2_coffang.dto.ServewareResponseDto;
 import lombok.Builder;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -43,5 +44,9 @@ public class Serveware extends Item {
     public Serveware(String name,Long price,Integer stockQuantity,String category,String imageUrl,String brand){
         super(name,price,stockQuantity,category,imageUrl);
         this.brand=brand;
+    }
+
+    public ServewareResponseDto toResponseDto() {
+        return new ServewareResponseDto(this);
     }
 }

@@ -6,11 +6,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CoffeeResponseDTO extends ItemResponseDto{
+public class CoffeeResponseDto extends ItemResponseDto{
     private String type;
     private String region;
 
-    public CoffeeResponseDTO(Coffee entity){
+    public CoffeeResponseDto(Coffee entity){
         super(entity);
         this.type = entity.getType();
         this.region = entity.getRegion();
