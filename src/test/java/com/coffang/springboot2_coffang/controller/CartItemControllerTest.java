@@ -48,7 +48,6 @@ public class CartItemControllerTest {
 
     @Test
     @DisplayName("CartItem 생성 테스트")
-    @WithMockUser(roles="USER")
     void CartItem_생성된다() throws Exception {
 
         // given
