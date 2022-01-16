@@ -1,5 +1,7 @@
 package com.coffang.springboot2_coffang.domain.item;
 
+import com.coffang.springboot2_coffang.dto.BrewingResponseDto;
+import com.coffang.springboot2_coffang.dto.ServewareResponseDto;
 import lombok.Builder;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -42,5 +44,9 @@ public class Brewing extends Item{
     public Brewing(String name,Long price,Integer stockQuantity,String category,String imageUrl,String toolType){
         super(name,price,stockQuantity,category,imageUrl);
         this.toolType=toolType;
+    }
+
+    public BrewingResponseDto toResponseDto() {
+        return new BrewingResponseDto(this);
     }
 }

@@ -1,6 +1,7 @@
 package com.coffang.springboot2_coffang.domain.item;
 
 
+import com.coffang.springboot2_coffang.dto.CoffeeResponseDto;
 import lombok.*;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -50,4 +51,7 @@ public class Coffee extends Item {
         this.region=region;
     }
 
+    public CoffeeResponseDto toResponseDto() {
+        return new CoffeeResponseDto(this);
+    }
 }
