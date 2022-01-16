@@ -1,8 +1,10 @@
 package com.coffang.springboot2_coffang.controller;
 
 import com.coffang.springboot2_coffang.config.auth.dto.SessionUser;
+import com.coffang.springboot2_coffang.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpSession;
@@ -12,10 +14,12 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final HttpSession httpSession;
+    private final ItemService itemService;
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
+        model.addAttribute("items", itemService.findAll());
         return "index";
     }
 
