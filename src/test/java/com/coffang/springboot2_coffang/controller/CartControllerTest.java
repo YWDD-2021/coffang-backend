@@ -2,7 +2,7 @@ package com.coffang.springboot2_coffang.controller;
 import com.coffang.springboot2_coffang.domain.cart.Cart;
 import com.coffang.springboot2_coffang.domain.user.User;
 import com.coffang.springboot2_coffang.dto.CartResponseDto;
-import com.coffang.springboot2_coffang.domain.item.service.CartService;
+import com.coffang.springboot2_coffang.service.CartService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -32,7 +31,6 @@ public class CartControllerTest {
 
     @Test
     @DisplayName("유저 장바구니 조회 테스트")
-    @WithMockUser(roles="USER")
     void findByUserIdTest() throws Exception {
         Cart cart = new Cart();
         User user = new User();
