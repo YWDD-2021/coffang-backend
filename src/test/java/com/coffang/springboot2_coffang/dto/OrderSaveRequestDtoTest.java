@@ -12,17 +12,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class OrderSaveRequestDtoTest {
     @Test
     public void OrderSaveRequestDto_테스트() {
-        // given
-        User user = new User();
-        List<OrderItem> orderItems = new ArrayList<OrderItem>();
-        Boolean isCompleted = true;
-
-        // when
-        OrderSaveRequestDto dto = new OrderSaveRequestDto(user, orderItems, isCompleted);
-
-        // then
-        assertThat(dto.getUser().getId()).isEqualTo(user.getId());
-        assertThat(dto.getOrderItems()).isEqualTo(orderItems);
-        assertThat(dto.getIsCompleted()).isEqualTo(isCompleted);
+//        // given
+//        User user = new User();
+//        List<OrderItem> orderItems = new ArrayList<OrderItem>();
+//        Boolean isCompleted = true;
+//
+//        // when
+//        OrderSaveRequestDto dto = new OrderSaveRequestDto(user, orderItems, isCompleted);
+//
+//        // then
+//        assertThat(dto.getUser().getId()).isEqualTo(user.getId());
+//        assertThat(dto.getOrderItems()).isEqualTo(orderItems);
+//        assertThat(dto.getIsCompleted()).isEqualTo(isCompleted);
     }
 }

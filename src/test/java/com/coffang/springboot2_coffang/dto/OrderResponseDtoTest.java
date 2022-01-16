@@ -3,7 +3,6 @@ package com.coffang.springboot2_coffang.dto;
 import com.coffang.springboot2_coffang.domain.orderitem.OrderItem;
 import com.coffang.springboot2_coffang.domain.user.User;
 import org.junit.jupiter.api.Test;
-import org.springframework.security.test.context.support.WithMockUser;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class OrderResponseDtoTest {
     @Test
-    @WithMockUser(roles="USER")
     public void OrderResponseDto_테스트() {
         // given
         Long id = 1L;
