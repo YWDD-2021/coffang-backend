@@ -1,6 +1,5 @@
 package com.coffang.springboot2_coffang.controller;
 
-import com.coffang.springboot2_coffang.config.auth.dto.SessionUser;
 import com.coffang.springboot2_coffang.service.ItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
